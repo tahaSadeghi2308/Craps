@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ghdl -a src/rtl/datapath/point_reg.vhd src/tb/datapath/point_reg_tb.vhd
-ghdl -e point_reg_tb
-ghdl -r point_reg_tb --wave=point_reg_wave.ghw --stop-time=200ns
-gtkwave point_reg_wave.ghw
+ghdl -a --std=08 src/rtl/control_unit/cu.vhd src/tb/control_unit/cu_tb.vhd
+ghdl -e --std=08 cu_tb
+ghdl -r --std=08 cu_tb --wave=cu_wave.ghw --stop-time=200ns
+gtkwave cu_wave.ghw
