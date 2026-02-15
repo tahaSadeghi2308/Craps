@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ghdl -a --std=08 src/rtl/datapath/test_logic.vhd src/tb/datapath/test_logic_tb.vhd
-ghdl -e --std=08 test_logic_tb
-ghdl -r --std=08 test_logic_tb --wave=test_logic_wave.ghw --stop-time=200ns
-gtkwave test_logic_wave.ghw
+ghdl -a --std=08 src/rtl/datapath/sevenseg.vhd src/tb/datapath/sevenseg_tb.vhd
+ghdl -e --std=08 sevenseg_tb
+ghdl -r --std=08 sevenseg_tb --wave=sevenseg_wave.ghw --stop-time=200ns
+gtkwave sevenseg_wave.ghw
