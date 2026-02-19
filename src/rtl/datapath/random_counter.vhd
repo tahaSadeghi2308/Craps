@@ -12,7 +12,7 @@ end entity;
 
 architecture Behavior of random_counter is
     signal lfsr : std_logic_vector(3 downto 0) := "1011";
-    signal dice_val : unsigned(2 downto 0) := "001";
+    signal dice_val : unsigned(2 downto 0) := "101";
 begin
     process(clk)
         variable temp : unsigned(2 downto 0);
