@@ -2,9 +2,6 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-library components;
-
-
 entity CrapsGame is
     port (
         clk     : in  std_logic;   
@@ -18,7 +15,6 @@ entity CrapsGame is
 end entity;
 
 architecture Structural of CrapsGame is
-
     signal die1_value : std_logic_vector(2 downto 0);
     signal die2_value : std_logic_vector(2 downto 0);
     signal die1_extended : std_logic_vector(3 downto 0);
@@ -34,7 +30,6 @@ architecture Structural of CrapsGame is
     signal lose_signal : std_logic;
     signal roll_signal : std_logic;
     signal sp_signal : std_logic;
-
 begin
 
     die1_extended <= '0' & die1_value;
