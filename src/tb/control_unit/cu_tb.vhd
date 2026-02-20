@@ -11,7 +11,7 @@ architecture Behavioral of cu_tb is
     signal D7, D711 , D2312 : std_logic := '0';
     signal eq : std_logic := '0';
     signal win , lose , roll , sp : std_logic := '0';
-    constant clk_period : time := 5 ns;
+    constant clk_period : time := 10 ns;
 begin
     cu_inst: entity work.cu
     port map(
@@ -28,7 +28,7 @@ begin
         sp => sp
     );
 
-    clk_process :process
+    clk_process: process
     begin
         clk <= '0';
         wait for clk_period/2;
@@ -41,11 +41,60 @@ begin
         reset <= '1';
         wait for clk_period;
         reset <= '0';
+        wait for clk_period;
+        
         enter <= '1';
         wait for clk_period;
         enter <= '0';
         D711 <= '1';
+        wait for clk_period;
+        D711 <= '0';
+        
+        reset <= '1';
+        wait for clk_period;
         reset <= '0';
-        wait for clk_period * 2;
+        wait for clk_period;
+        
+        enter <= '1';
+        wait for clk_period;
+        enter <= '0';
+        D2312 <= '1';
+        wait for clk_period;
+        D2312 <= '0';
+        
+        reset <= '1';
+        wait for clk_period;
+        reset <= '0';
+        wait for clk_period;
+        
+        enter <= '1';
+        wait for clk_period;
+        enter <= '0';
+        wait for clk_period;
+        
+        enter <= '1';
+        wait for clk_period;
+        enter <= '0';
+        eq <= '1';
+        wait for clk_period;
+        eq <= '0';
+        
+        reset <= '1';
+        wait for clk_period;
+        reset <= '0';
+        wait for clk_period;
+        
+        enter <= '1';
+        wait for clk_period;
+        enter <= '0';
+        wait for clk_period;
+        
+        enter <= '1';
+        wait for clk_period;
+        enter <= '0';
+        D7 <= '1';
+        wait for clk_period;
+        D7 <= '0';
+        wait;
     end process;
 end Behavioral;
